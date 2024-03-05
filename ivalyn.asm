@@ -10,19 +10,30 @@
 ; or sword to defeat the female dragon Ivalyn and save the princess...
 ; *******************************************************************
 ; TODO
-; [] Black Background
+; [x] Black Background
 ; [] Create Sprite Lookup Tables
 ; [] Set Color Lookup Tables
-; [] Display Mage Locations (Score)
-; [] Display Playfield
+; [] Display Score (player's health)
+; [] Display Playfield (black background with white playfield)
 ; [] Display Player
-; [] Change Player Equipment
-; [] 2D Array???
-; [] Display Arrow
-; [] Death Screen
-; [] Dragon Hit
-; [] Magic Missle
-; [] Dragon Fire
+; [] Display Selected Item
+; [] Player Movement w/ Boundries
+; [] Item Selection
+; [] Display Enemy
+; [] Display Items
+; [] Combat Screen Change
+; [] Display Combat Enemy
+; [] Display Equipped Item
+; [] Player Combat
+; [] Enemy Combat
+; [] Player Death
+; [] Enemy Death
+; [] Pit Display
+; [] Pit Escape w/ Rope
+; [] Dragon Display
+; [] Dragon Combat
+; [] Victory 'Screen'
+; [] Defeat
 ;
 ; Bugs:
 ;
@@ -46,8 +57,8 @@ Reset:
 ; *******************************************************************
 ; Initialize RAM variables and TIA registers
 ; *******************************************************************
-    LDA #$FE                            ; gold into A register (background test)
-    STA COLUBK                          ; store gold into background register
+    LDA #$00                            ; black color
+    STA COLUBK                          ; store black into background register
 
 ; *******************************************************************
 ; Set the main display loop and frame rendering
