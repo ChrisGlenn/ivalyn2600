@@ -4,7 +4,7 @@
     INCLUDE "macro.h"
 ; *******************************************************************
 ; THE LABRYNTH OF IVALYN
-; By CHRIS
+; VI VII - IX IV
 ; *******************************************************************
 ; An action game where the player navigates a maze looking for a magic missle
 ; or sword to defeat the female dragon Ivalyn and save the princess...
@@ -18,8 +18,10 @@
 ; [] Display Player
 ; [] Display Selected Item
 ; [] Player Movement w/ Boundries
+; [] Player Movement SFX
 ; [] Item Selection
 ; [] Display Enemy
+; [] Enemy Appears SFX/Music
 ; [] Display Items
 ; [] Combat Screen Change
 ; [] Display Combat Enemy
@@ -242,6 +244,50 @@ Goblin
     .byte #%00000000        ;
 
 Hundling
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+
+Dragon
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+
+Rope
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+
+Sword
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+    .byte #%00000000        ;
+
+Shield
     .byte #%00000000        ;
     .byte #%00000000        ;
     .byte #%00000000        ;
