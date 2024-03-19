@@ -11,7 +11,7 @@
 ; *******************************************************************
 ; TODO
 ; [x] Black Background
-; [] Create Sprite Lookup Tables
+; [x] Create Sprite Lookup Tables
 ; [] Set Color Lookup Tables
 ; [] Display Score (player's health)
 ; [] Display Playfield (black background with white playfield)
@@ -286,48 +286,49 @@ Dragon
 
 Rope
     .byte #%00000000        ;
-    .byte #%00000000        ;
-    .byte #%00000000        ;
-    .byte #%00000000        ;
-    .byte #%00000000        ;
-    .byte #%00000000        ;
-    .byte #%00000000        ;
-    .byte #%00000000        ;
-    .byte #%00000000        ;
+    .byte #%00010000        ;    #
+    .byte #%00010000        ;    #
+    .byte #%00100000        ;   #
+    .byte #%00100000        ;   #
+    .byte #%00010000        ;    #
+    .byte #%01010100        ;  # # #
+    .byte #%00101000        ;   # #
+    .byte #%00010000        ;    #
 
 MagicMissle
     .byte #%00000000        ;
-    .byte #%00000000        ;
-    .byte #%00000000        ;
-    .byte #%00000000        ;
-    .byte #%00000000        ;
-    .byte #%00000000        ;
-    .byte #%00000000        ;
-    .byte #%00000000        ;
-    .byte #%00000000        ;
+    .byte #%00011000        ;    ##
+    .byte #%00011000        ;    ##
+    .byte #%00011000        ;    ##
+    .byte #%00011000        ;    ##
+    .byte #%00100100        ;   #  #
+    .byte #%00111100        ;   ####
+    .byte #%00100100        ;   #  #
+    .byte #%00011000        ;    ##
 
 Sword
     .byte #%00000000        ;
-    .byte #%00000000        ;
-    .byte #%00000000        ;
-    .byte #%00000000        ;
-    .byte #%00000000        ;
-    .byte #%00000000        ;
-    .byte #%00000000        ;
-    .byte #%00000000        ;
-    .byte #%00000000        ;
+    .byte #%00010000        ;    x
+    .byte #%00010000        ;    x
+    .byte #%00111000        ;   xxx
+    .byte #%01010100        ;  x x x
+    .byte #%00010000        ;    x
+    .byte #%00010000        ;    x
+    .byte #%00010000        ;    x
+    .byte #%00010000        ;    x
 
 Potion
     .byte #%00000000        ;
-    .byte #%00000000        ;
-    .byte #%00000000        ;
-    .byte #%00000000        ;
-    .byte #%00000000        ;
-    .byte #%00000000        ;
-    .byte #%00000000        ;
-    .byte #%00000000        ;
-    .byte #%00000000        ;
+    .byte #%00111100        ;   xxxx
+    .byte #%01111110        ;  xxxxxx
+    .byte #%01111110        ;  xxxxxx
+    .byte #%00111100        ;   xxxx
+    .byte #%00011000        ;    xx
+    .byte #%00011000        ;    xx
+    .byte #%00111100        ;   xxxx
+    .byte #%00011000        ;    xx
 
+; COLOR TABLES
 
 ; *******************************************************************
 ; Complete ROM size to 4k
