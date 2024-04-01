@@ -12,9 +12,9 @@
 ; TODO
 ; [x] Black Background
 ; [x] Create Sprite Lookup Tables
-; [] Set Color Lookup Tables
+; [x] Set Color Lookup Tables
 ; [] Display Score (player's health)
-; [] Display Playfield (black background with white playfield)
+; [] Display Playfield (black background with gray playfield)
 ; [] Display Player
 ; [] Display Selected Item
 ; [] Player Movement w/ Boundries
@@ -63,16 +63,22 @@ Reset:
 ; *******************************************************************
 ; Initialize RAM variables and TIA registers
 ; *******************************************************************
-    ; LDA #$00                            ; black color
-    ; STA COLUBK                          ; store black into background register
+    ; static colors
+    LDA #$00                            ; black color
+    STA COLUBK                          ; store black into background register
+    LDA #$0A                            ; gray
+    STA COLUPF                          ; store gray into the playfield register
+    LDA #$0C                            ; light gray/white
+    STA COLUP0                          ; store in player 0 register
+
 
 ; *******************************************************************
 ; Set the main display loop and frame rendering
 ; *******************************************************************
 StartFrame:
     ; game reset using console switch
-    ; LSR SWCHB                           ; console input
-    ; BCC Reset                           ; reset the game if pressed
+    LSR SWCHB                           ; console input
+    BCC Reset                           ; reset the game if pressed
 
     ; DISPLAY VSYNC AND VBLANK
     LDA #2
@@ -329,6 +335,50 @@ Potion
     .byte #%00011000        ;    xx
 
 ; COLOR TABLES
+RopeColour
+    .byte #$00              ; black (empty)
+    .byte #$E4              ; brown
+    .byte #$E4              ; brown
+    .byte #$E4              ; brown
+    .byte #$E4              ; brown
+    .byte #$E4              ; brown
+    .byte #$0C              ; silver
+    .byte #$0C              ; silver
+    .byte #$0C              ; silver
+
+MissleColour
+    .byte #$00              ; black (empty)
+    .byte #$0E              ; white
+    .byte #$0E              ; white
+    .byte #$0E              ; white
+    .byte #$0E              ; white
+    .byte #$0E              ; white
+    .byte #$8E              ; light blue
+    .byte #$0E              ; white
+    .byte #$0E              ; white
+
+SwordColour
+    .byte #$00              ; black (empty)
+    .byte #$08              ; dark grey
+    .byte #$E4              ; brown
+    .byte #$08              ; dark grey
+    .byte #$0C              ; grey
+    .byte #$0C              ; grey
+    .byte #$0C              ; grey
+    .byte #$0C              ; grey
+    .byte #$0C              ; grey
+
+PotionColour
+    .byte #$00              ; black (empty)
+    .byte #$8E              ; light blue
+    .byte #$8E              ; light blue
+    .byte #$8E              ; light blue
+    .byte #$8E              ; light blue
+    .byte #$8E              ; light blue
+    .byte #$8E              ; light blue
+    .byte #$8E              ; light blue
+    .byte #$E8              ; light brown (quark)
+
 
 ; *******************************************************************
 ; Complete ROM size to 4k
