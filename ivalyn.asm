@@ -13,16 +13,14 @@
 ; [x] Black Background
 ; [x] Create Sprite Lookup Tables
 ; [x] Set Color Lookup Tables
-; [] Display Score (player's health)
 ; [] Display Playfield (black background with gray playfield)
 ; [] Display Player
-; [] Display Selected Item
 ; [] Player Movement w/ Boundries
 ; [] Player Movement SFX
-; [] Item Selection
+; [] Mine Location Check/Counter
+; [] Enemy Encounter
 ; [] Display Enemy
 ; [] Enemy Appears SFX/Music
-; [] Display Items
 ; [] Combat Screen Change
 ; [] Display Combat Enemy
 ; [] Display Equipped Item
@@ -386,3 +384,22 @@ PotionColour
     ORG $FFFC                       ; move to position $FFFC
     .word Reset                     ; write 2 bytes with the program reset address
     .word Reset                     ; write 2 bytes with the interruption vector
+
+
+; mode: symmetric mirrored line-height 12
+;.byte %11110000,%11111111,%11111111 ;|XXXXXXXXXXXXXXXXXXXX| ( 0)
+;.byte %01010000,%00000010,%10000001 ;|X X       X X      X| ( 1)
+;.byte %01010000,%11101010,%11111101 ;|X X XXX X X X XXXXXX| ( 2)
+;.byte %01010000,%10001010,%00000000 ;|X X X   X X         | ( 3)
+;.byte %00010000,%10111010,%10111101 ;|X   X XXX X X XXXX X| ( 4)
+;.byte %11110000,%10000010,%10110001 ;|XXXXX     X X   XX X| ( 5)
+;.byte %00010000,%00111110,%10110111 ;|X     XXXXX XXX XX X| ( 6)
+;.byte %01010000,%10100000,%10110001 ;|X X X X     X   XX X| ( 7)
+;.byte %01110000,%10101111,%10111101 ;|XXX X X XXXXX XXXX X| ( 8)
+;.byte %00010000,%10000010,%10000000 ;|X   X     X        X| ( 9)
+;.byte %11110000,%11111010,%11111111 ;|XXXXXXXXX X XXXXXXXX| (10)
+;.byte %00010000,%00000010,%11000100 ;|X         X   X   XX| (11)
+;.byte %11010000,%11101010,%11010101 ;|X XXXXX X X X X X XX| (12)
+;.byte %01010000,%00101000,%00010101 ;|X X   X X   X X X   | (13)
+;.byte %00010000,%10101111,%10010001 ;|X   X X XXXXX   X  X| (14)
+;.byte %11110000,%11111111,%11111111 ;|XXXXXXXXXXXXXXXXXXXX| (15)
